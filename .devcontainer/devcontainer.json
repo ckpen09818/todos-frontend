@@ -1,0 +1,37 @@
+{
+  "name": "Todos-frontend",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": true,
+      "source.fixAll.eslint": true
+    },
+    "[yaml]": {
+      "editor.tabSize": 2,
+      "editor.autoIndent": "advanced"
+    },
+    "[dockercompose]": {
+      "editor.autoIndent": "advanced"
+    },
+    "typescript.tsdk": "node_modules/typescript/lib"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "Vue.volar"],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "pnpm install",
+  "postAttachCommand": "pnpm dev",
+
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
+}
