@@ -106,6 +106,7 @@ import TaskDrawer from './components/TaskDrawer.vue'
 - 使用 index.ts 統一輸出資料夾下 script
 - services directory 裡面 api 需要先在 types/api/\* 定義
   - 使用 namespace 定義不同 service
+- import type use `import { type SomeType } from '...'`
 
 ## File structure
 

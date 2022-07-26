@@ -1,10 +1,10 @@
 # Todos Frontend
 
-This project need backend api. Backend project [todos-backend]()
+This project need backend api. Backend project [todos-backend](https://github.com/ckpen09818/todos-backend)
 
 ### Code Guide
 
-[docs]()
+[docs](https://github.com/ckpen09818/todos-frontend/blob/master/docs/CodeGuide.md)
 
 ### Installation
 
