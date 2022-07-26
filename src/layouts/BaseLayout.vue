@@ -17,6 +17,6 @@ import Navigates from './Navigates.vue'
 
 <style>
 .layout-content {
-  @apply relative  mx-auto p-4 h-full w-full md:w-10/12 lg:w-9/12 xl:w-1/3 overflow-hidden;
+  @apply relative mx-auto p-4 h-full max-w-screen-lg w-full md:w-10/12 lg:w-9/12 xl:w-2/3 overflow-hidden;
 }
 </style>

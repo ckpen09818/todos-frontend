@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       vue({
-        reactivityTransform: true,
+        // reactivityTransform: true,
       }),
       Components({
         resolvers: [AntDesignVueResolver()],
@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: '0.0.0.0',
-      port: 3000,
+      port: 3080,
     },
   }
 })

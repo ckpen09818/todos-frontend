@@ -1,4 +1,4 @@
-export * from './transformToUTC'
+export * from './time'
 export * from './uid'
 
 export const NO_OP = () => {}

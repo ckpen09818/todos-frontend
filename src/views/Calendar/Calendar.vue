@@ -1,5 +1,5 @@
 <template>
-  <ACalendar v-model:value="selectedDate" valueFormat="YYYYMMDD" @select="onSelect" />
+  <ACalendar valueFormat="YYYYMMDD" v-model:value="selectedDate" @select="onSelect" />
 </template>
 
 <script setup lang="ts">

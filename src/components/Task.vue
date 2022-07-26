@@ -1,9 +1,9 @@
 <template>
   <ACard
-    :class="['task', !bordered && '!border-none']"
     ref="taskRef"
-    :bodyStyle="{ padding: '0.5rem' }"
     tabindex="0"
+    :class="['task', !bordered && '!border-none']"
+    :bodyStyle="{ padding: '0.5rem' }"
     @keydown.enter.stop="inputFocus = true"
   >
     <div class="task__wrapper">

@@ -7,4 +7,4 @@ RUN mkdir -p /home/node/app
 
 WORKDIR /home/node/app
 
-EXPOSE 3000
+EXPOSE 3080

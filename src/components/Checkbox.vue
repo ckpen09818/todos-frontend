@@ -1,18 +1,19 @@
 <template>
   <div :class="$style['checkbox']">
     <input
-      :class="[($slots.trueIcon || $slots.falseIcon) && 'hidden']"
-      type="checkbox"
       ref="inputRef"
+      type="checkbox"
       :id="checkboxId"
+      :class="[($slots.trueIcon || $slots.falseIcon) && 'hidden']"
       :checked="internalChecked"
       :data-indeterminate="indeterminate ? 'yes' : undefined"
       v-bind="{ disabled, trueValue, falseValue, value }"
       @change="onChange"
     />
     <label :for="checkboxId" :class="$style['checkbox__wrapper']">
-      <slot v-if="internalChecked" name="trueIcon"></slot>
-      <slot v-else name="falseIcon"></slot>
+      <slot v-if="internalChecked" name="trueIcon" />
+      <slot v-else name="falseIcon" />
+
       <span v-if="$props.label">{{ label }}</span>
       <slot v-else />
     </label>

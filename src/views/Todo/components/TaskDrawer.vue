@@ -1,5 +1,5 @@
 <template>
-  <ADrawer v-model:visible="visible" :closable="false" :bodyStyle="{ padding: '12px' }">
+  <ADrawer :closable="false" :bodyStyle="{ padding: '12px' }" v-model:visible="visible">
     <div class="flex flex-col h-full">
       <template v-if="task">
         <Task
