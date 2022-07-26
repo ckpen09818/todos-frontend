@@ -108,6 +108,10 @@ import TaskDrawer from './components/TaskDrawer.vue'
   - 使用 namespace 定義不同 service
 - import type use `import { type SomeType } from '...'`
 
+### 注意事項
+
+- 專案使用了`unplugin-vue-components`，src/components 底下的元件可以直接在 template 使用，不需要額外 import，ant-design-vue 元件也能按需引入
+
 ## File structure
 
 ```
