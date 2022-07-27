@@ -70,13 +70,13 @@ export default defineComponent({
           newModelValue = [...modelValue]
           newModelValue.splice(index, 1)
         }
-        ctx.emit('change', newModelValue)
         ctx.emit('update:modelValue', newModelValue)
+        ctx.emit('change', newModelValue)
       } else {
         const hasCustomTrueFalseValue = props.trueValue && props.falseValue
         const checkedValue = hasCustomTrueFalseValue ? (checked ? props.trueValue : props.falseValue) : checked
-        ctx.emit('change', checkedValue)
         ctx.emit('update:modelValue', checkedValue)
+        ctx.emit('change', checkedValue)
       }
     }
 

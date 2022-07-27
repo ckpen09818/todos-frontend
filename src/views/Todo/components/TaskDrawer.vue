@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { unref } from 'vue'
+import { computed, unref } from 'vue'
 import { useDebounceFn } from '@vueuse/core'
 
 import { useTodoStore } from '@/stores'
@@ -41,7 +41,9 @@ import { RightOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import TaskMarkedAction from './TaskMarkedAction.vue'
 
 const todoStore = useTodoStore()
-const { visible, data: task, closeDrawer } = useDrawer<Task>()
+const { visible, state: DrawerState, closeDrawer } = useDrawer<Task>()
+
+const task = computed(() => todoStore.tasks.find((task) => task.tid === DrawerState.value.tid) as Task)
 
 const debouncedUpdateTask = useDebounceFn(
   () => {

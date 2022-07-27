@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 
@@ -38,14 +38,14 @@ const initNewTaskState = (): Omit<Task, 'tid' | 'important'> => ({
   date: transformToUTC(route.params.date as string),
 })
 
-let newTask = $ref(initNewTaskState())
+let newTask = ref(initNewTaskState())
 
 const todoStore = useTodoStore()
-const { finishedTasks, unfinishedTasks } = $(storeToRefs(todoStore))
+const { finishedTasks, unfinishedTasks } = storeToRefs(todoStore)
 
 const handleAddTask = () => {
-  todoStore.addTask(newTask)
-  newTask = initNewTaskState()
+  todoStore.addTask(newTask.value)
+  newTask.value = initNewTaskState()
 }
 
 watch(

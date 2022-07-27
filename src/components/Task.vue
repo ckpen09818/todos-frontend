@@ -55,9 +55,9 @@ const emit = defineEmits<{
 const taskRef = ref<HTMLDivElement>()
 const inputRef = ref(null)
 
-let { focused: inputFocus } = $(useFocus(inputRef))
-let { focused: taskFocus } = $(useFocus(taskRef))
-watch([$$(inputFocus), $$(taskFocus)], () => {
+let { focused: inputFocus } = useFocus(inputRef)
+let { focused: taskFocus } = useFocus(taskRef)
+watch([inputFocus, taskFocus], () => {
   emit('focus')
 })
 
@@ -87,8 +87,8 @@ const internalInputValue = computed({
 const inputProps = computed(() => (props.checked ? { class: ['task__input--done'] } : {}))
 
 const handlePressEnterKey = () => {
-  inputFocus = false
-  taskFocus = true
+  inputFocus.value = false
+  taskFocus.value = true
   emit('keydown:enter')
 }
 </script>

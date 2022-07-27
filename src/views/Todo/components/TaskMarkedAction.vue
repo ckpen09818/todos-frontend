@@ -1,5 +1,5 @@
 <template>
-  <Checkbox v-model:checked="task.important" @change="todoStore.updateTask(task)">
+  <Checkbox v-model="task.important" @change="todoStore.updateTask(task)">
     <template #trueIcon>
       <Icon :icon="StarFilled" />
     </template>
